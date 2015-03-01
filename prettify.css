@@ -1,0 +1,81 @@
+pre {
+	direction:ltr;
+	text-align:left;
+	overflow:auto;
+	margin:3px 0 0 0;
+	min-height:120px;
+}
+.com { color: #93a1a1; }
+.lit { color: #195f91; }
+.pun { color: #93a1a1; }
+.opn { color:#70C572; }
+.clo { color: #C47173; }
+.fun { color: #dc322f; }
+.str, .atv { color: #D14; }
+.kwd, .linenums .tag { color: #1e347b; }
+.typ, .atn, .dec, .var { color: teal; }
+.pln { color: #48484c; }
+
+.prettyprint {
+  padding: 8px;
+  background: #f7f7f9 none;
+  border: 1px solid #e1e1e8;
+}
+.prettyprint:before,
+.prettyprint:after {
+	display:none;
+}
+.textarea-wrap {
+	display:block;
+	padding:0px 10px 20px 10px;
+	border-radius:6px 6px 0 0;
+	box-shadow:-1px 2px 3px rgba(0, 0, 0, .3);
+	background-color:slateblue;
+	border:1px #392B8C solid;
+	margin:25px 25px 10px;
+}
+.textarea-wrap textarea {
+	display:none;
+	height:120px;
+	direction:ltr;
+	width:calc(100% - 20px);
+}
+.textarea-wrap pre  {
+	width:calc(100% - 20px);
+}	
+pre {
+	transition:max-height .4s linear;
+	
+}
+pre.minHeight {
+	max-height:120px;
+}
+pre.maxHeight {
+	max-height:2120px;
+	transition:max-height 2s ease-in-out;
+}
+pre[contenteditable=true] {
+	outline:3px orange solid;
+}
+	.pretoolbar span {
+	color:#FFF;
+	display:inline-block;
+	padding:1px;
+	cursor:pointer;
+        font-size: 1.2em;
+	}
+
+    .selectcode:before
+    {
+        content: "\271A";
+    }
+    
+    .toggleContenteditable:before
+    {
+        content: "\270E";        
+    }
+    
+    .pre-maxHeight-toggle:before
+    {
+        content: "\2714";        
+    }
