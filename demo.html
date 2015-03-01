@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html dir="rtl">
+
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+<title>Textarea2Pre</title>
+<script src="jquery.min.1.7.2.js"></script>
+<script type='text/javascript' src='prettify.min.js'></script>
+<link media="all" href="prettify.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+<div class="textarea-wrapInner" >
+<div class="textarea-wrap">
+<textarea cols="99" dir="ltr" name="code1" rows="10" tabindex="2">$("textarea.code").each(function() {
+	$('<pre></pre>').insertBefore($(this));
+});
+$("textarea.code").promise().done(function() {
+	var t = $(this).val();
+	$(this).prev("pre").text(t).each(function() {
+	var h = $(this).outerHeight();
+	$(this).addClass("prettyprint linenums").attr("contenteditable", "true");
+	if(h>120) {
+	$(this).addClass("minHeight").wrap('<div class="pre-wrap pre-wrap-minHeight"></div>');
+	$('<span class="caret pre-maxHeight-toggle">&nabla;</span>').insertBefore($(this));
+	}
+	else {
+	$(this).wrap('<div class="pre-wrap"></div>');
+	}
+	});
+	$("pre").promise().done(function() {
+	 window.prettyPrint && prettyPrint();
+	});
+	$(".pre-maxHeight-toggle").click(function() {
+	$(this).next("pre").toggleClass("maxHeight").toggleClass("minHeight");
+	});
+});
+</textarea>
+</div>
+</div>
+<div class="textarea-wrapInner">
+<div class="textarea-wrap">
+<textarea><a href="http://1fakhar.ir">1fakhar.ir</a></textarea>
+</div>
+</div>
+<script type='text/javascript' src='textarea2pre.js'></script>
+&copy; 2015 <a href="http://1fakhar.ir">Iman Fakhar</a>
+</body>
+
+</html>
